@@ -44,7 +44,10 @@ namespace el2labs_task
             {
                 app.UseHsts();
             }
-
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
             app.UseHttpsRedirection();
             app.UseMvc();
         }
